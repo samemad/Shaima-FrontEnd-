@@ -1,14 +1,14 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import {defineConfig, loadEnv} from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 
-export default defineConfig(({mode}) => {
+export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
   return {
-    base: '/Shaima-FrontEnd-/', // <-- Add this
+    base: '/Shaima-FrontEnd-/', // Important for GitHub Pages!
     build: {
-      outDir: 'lib',           // <-- Add this
+      outDir: 'lib', // This should match what your workflow deploys
     },
     plugins: [react(), tailwindcss()],
     define: {
